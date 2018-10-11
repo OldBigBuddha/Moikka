@@ -16,6 +16,7 @@
     "hexo-server": "^0.3.1"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.1.0",
     "gulp": "^3.9.1",
     "hexo-generator-feed": "^1.2.2",
     "hexo-generator-sitemap": "^1.2.0",
