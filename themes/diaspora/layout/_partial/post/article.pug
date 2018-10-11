@@ -1,0 +1,12 @@
+.article
+  .main
+  h1.title= page.title
+    .stuff
+      span= page.date.locale("zh-cn").format("MMMM DD, YYYY")
+        partial('_partial/post/tag', `{post: page}`)
+      .content.markdown
+        =page.content
+        partial('gitalk', `{post: page}`)
+    if (theme.TOC == true){
+      .side
+        toc(page.content, `{list_number: true}`)
