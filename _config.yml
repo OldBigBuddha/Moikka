@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Moikka! | 現地の留学生が届ける最新フィンランド情報！
+title: Moikka!
 subtitle:
 description: 留学中の高校生があなたのフィンランドに関する疑問に即座に答える新感覚メディア！！全てが生の情報で出来上がっている・・・
 keywords:
@@ -73,7 +73,19 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: diaspora
+theme: brewski
+theme_config:
+  logo:
+  google_analytics: 
+  copyright:
+    since: 2018
+    name: Moikka!編集部
+    url: http://moikka.media
+  menu:
+    Home: /
+    About: /about
+    GitHub: https://github.com/OldBigBuddha/Moikka
+    RSS: /atom.xml
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
