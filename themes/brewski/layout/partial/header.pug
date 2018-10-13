@@ -1,9 +1,18 @@
 - 
-    var menuItems = {
-        "過去の記事": "/posts",
-        "『Moikka!』に質問": "/question",
-        "『Moikka!』とは？": "/about"
-    }
+    var menuItems = [
+        {
+            title: "過去の記事", 
+            url: "/posts"
+        },
+        {
+            title: "『Moikka!』に質問", 
+            url: "/question"
+        },
+        {
+            title: "『Moikka!』とは？", 
+            url: "/about"
+        }
+    ];
 
 header
     img#logo(src=url_for('img/logo.png'), alt="Moikka!")
@@ -11,10 +20,10 @@ header
     ul.nav.nav-list
 
 
-        each url, title in menuItems
+        each item in menuItems
             li.nav-list-item
                 - var re = /^(http|https):\/\/*/gi;
-                - var tar = re.test(url) ? "_blank" : "_self"
+                - var tar = re.test(item.url) ? "_blank" : "_self"
                 - var type = url.indexOf('.html') === -1 ? 'no-barba' : ''
-                a.nav-list-link(href=url_for(url) target=tar class=type)
-                    != title
+                a.nav-list-link(href=url_for(item.url) target=tar class=type)
+                    != item.title
