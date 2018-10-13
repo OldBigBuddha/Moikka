@@ -83,8 +83,8 @@ theme_config:
     url: http://moikka.media
   menu:
     Home: /
+    Question: /question
     About: /about
-    GitHub: https://github.com/OldBigBuddha/Moikka
     RSS: /atom.xml
 
 # Deployment
