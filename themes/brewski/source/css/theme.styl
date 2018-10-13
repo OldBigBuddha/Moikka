@@ -11,12 +11,15 @@ body
   width 90%
   max-width 45em
   margin 0 auto
+
 ul
   margin 1rem 0
+
 p
   letter-spacing -.01em
   line-height 1.8
   margin 1.2em 0
+
 a,
 a:active
   color #222831
@@ -40,15 +43,19 @@ h6
   display flex
   flex-wrap wrap
   justify-content center
+
 .nav-list-link
   padding-bottom .15em
   border-bottom .2em solid transparent
+
 .nav-list-link:hover
   border-bottom .2em solid $primary
   padding-bottom .15em
   transition 150ms ease-in-out
+
 code
   padding .2em .4em
+
 iframe,
 video
   max-width 100%
@@ -61,8 +68,10 @@ table
     text-align left
     margin 0
     padding .4em .8em
+
   thead
     background-color #fff
+
   tbody
     tr
       border-top 0
@@ -86,10 +95,12 @@ header
   justify-content space-between
   align-items center
   flex-wrap wrap
+
   .branding
     display inline-block
     margin .6em 0 0 0
     position relative
+
   .nav-list-item
     display inline-block
     padding 1em .8em
@@ -155,12 +166,14 @@ header
     display flex
     flex-wrap wrap
     padding-left 1.5rem
+
   .post-title-link
     color #9e1900
     padding-left 1em
     &:hover
       border-bottom 0
       color #801501
+
   .post-info
     width 6em
     font-size .9em
@@ -184,18 +197,18 @@ header
     margin 1.2em 0
     span
       margin-left .5rem
-    a
-      &.post-from
-        margin-left .5rem
-        padding .2em .3em
-        border-radius .3em
-        font-size .7em
-        color #fff
-        background-color #e36b6b
+    a.post-from
+      margin-left .5rem
+      padding .2em .3em
+      border-radius .3em
+      font-size .7em
+      color #fff
+      background-color #e36b6b
 
 .post-content
   h2, h3, h4, h5, h6 
       margin-bottom 1em
+
   h2 a:before,
   h3 a:before,
   h4 a:before,
@@ -212,6 +225,7 @@ header
   h5 a:before,
   h6 a:before 
     content ""
+
 .post-content h1,
 .post-block .post-title
   margin-top 2em
@@ -251,20 +265,26 @@ header
   h2
     margin-top 1.8em
     font-size 2.8em
+
   h3
     margin-top 1.6em
     font-size 2.6em
+
   h4
     margin-top 1.4em
     font-size 2.4em
+
   h5
     margin-top 1.2em
     font-size 2.2em
+
   h6
     margin-top 1em
     font-size 2em
+
   a
     color #9e1900
+
   blockquote
     margin 2em 0
     padding .5em 1.3em
@@ -275,13 +295,16 @@ header
     &.warning
       bordercolor #f0ad4e
       borderwidth 4px
+
   li
     margin-left 1em
     listtype disc
+
   img
     display block
     max-width 100%
     margin 1em auto
+
   .tip
     position relative
     margin 2em 0
@@ -289,6 +312,7 @@ header
     border-left 4px solid #f66
     border borderright-radius .06em
     background-color #f8f8f8
+
     br
       display none
     &:before
@@ -306,6 +330,7 @@ header
       text-align center
       background-color #f66
       font-family "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif
+
 blockquote
   margin 2em 0
   padding .5em 1.3em
@@ -367,22 +392,22 @@ img
   display flex
   justify-content space-around
 
-.paginator .prev,
-.paginator .next
-  position relative
-  box-shadow 0 .3em #801501
-  display inline-block
-  margin 0 .2em
-  padding .3em 1.5em
-  border-radius 5px
-  color #fff
-  background-color #9e1900
-  font-weight 600
+  .prev,
+  .next
+    position relative
+    box-shadow 0 .3em #801501
+    display inline-block
+    margin 0 .2em
+    padding .3em 1.5em
+    border-radius 5px
+    color #fff
+    background-color #9e1900
+    font-weight 600
 
-.paginator .prev:hover,
-.paginator .next:hover
-  box-shadow 0 .2em #801501
-  top .1em
+  .prev:hover,
+  .next:hover
+    box-shadow 0 .2em #801501
+    top .1em
 
 .ds-thread,
 #disqus_thread
@@ -415,14 +440,12 @@ footer
       &:hover
         color #393e46
 
-footer .copyright p,
-footer .copyright a
-  padding 1em 0
-  color #393e46
-  font-weight 300
+    p, a
+      padding 1em 0
+      color #393e46
+      font-weight 300
 
-code,
-pre
+code, pre
   font-size .8em
   background-color #f8f8f8
   font-family "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace
@@ -436,6 +459,7 @@ pre
   overflow-x auto
   .gutter
     display none
+
   .code
     pre
       padding 1.2em 1.4em
@@ -444,92 +468,6 @@ pre
       .line
         width auto
         height 1.5em
-  &.sql
-    .code
-      &:after
-        content "SQL"
-  &.ini
-    .code
-      &:after
-        content "INI"
-  &.conf
-    .code
-      &:after
-        content "CONF"
-  &.html
-    .code
-      &:after
-        content "HTML"
-  &.javascript
-    .code
-      &:after
-        content "JAVASCRIPT"
-  &.js
-    .code
-      &:after
-        content "JS"
-  &.bash
-    .code
-      &:after
-        content "BASH"
-  &.css
-    .code
-      &:after
-        content "CSS"
-  &.scss
-    .code
-      &:after
-        content "SCSS"
-  &.diff
-    .code
-      &:after
-        content "DIFF"
-  &.java
-    .code
-      &:after
-        content "JAVA"
-        content "JAVA"
-  &.xml
-    .code
-      &:after
-        content "XML"
-  &.python
-    .code
-      &:after
-        content "PYTHON"
-  &.json
-    .code
-      &:after
-        content "JSON"
-  &.swift
-    .code
-      &:after
-        content "SWIFT"
-  &.ruby
-    .code
-      &:after
-        content "RUBY"
-  &.perl
-    .code
-      &:after
-        content "PERL"
-  &.php
-    .code
-      &:after
-        content "PHP"
-  &.c
-    .code
-      &:after
-        content "C"
-  &.cpp
-    .code
-      &:after
-        content "CPP"
-        content "C++"
-  &.ts
-    .code
-      &:after
-        content "TS"
 
 .highlight table,
 .highlight tr,
@@ -538,37 +476,6 @@ pre
   border-collapse collapse
   padding 0
   margin 0
-
-.highlight.sql .code:after,
-.highlight.ini .code:after,
-.highlight.conf .code:after,
-.highlight.html .code:after,
-.highlight.javascript .code:after,
-.highlight.js .code:after,
-.highlight.bash .code:after,
-.highlight.css .code:after,
-.highlight.scss .code:after,
-.highlight.diff .code:after,
-.highlight.java .code:after,
-.highlight.xml .code:after,
-.highlight.python .code:after,
-.highlight.json .code:after,
-.highlight.swift .code:after,
-.highlight.ruby .code:after,
-.highlight.perl .code:after,
-.highlight.php .code:after,
-.highlight.c .code:after,
-.highlight.cpp .code:after,
-.highlight.ts .code:after
-  position absolute
-  top 0
-  right 0
-  color #84878c
-  text-align right
-  font-size .7em
-  padding .4em .7em 0
-  height .9em
-  font-weight 600
 
 pre
   color #525252
@@ -586,53 +493,52 @@ pre
   .strong
     font-weight 600
 
-pre .comment,
-pre .quote
-  color #998
-  font-style italic
+  .comment, .quote
+    color #998
+    font-style italic
 
-pre .keyword,
-pre .selector-tag,
-pre .subst
-  color #222831
-  font-weight 600
+  .keyword,
+  .selector-tag,
+  .subst
+    color #222831
+    font-weight 600
 
-pre .number,
-pre .literal,
-pre .variable,
-pre .template-variable,
-pre .tag .attr
-  color #008080
+  .number,
+  .literal,
+  .variable,
+  .template-variable,
+  .tag .attr
+    color #008080
 
-pre .string,
-pre .doctag
-  color #d14
+  .string,
+  .doctag
+    color #d14
 
-pre .title,
-pre .section,
-pre .selector-id
-  color #900
-  font-weight 600
+  .title,
+  .section,
+  .selector-id
+    color #900
+    font-weight 600
 
-pre .type,
-pre .class .title
-  color #458
-  font-weight 600
+  .type,
+  .class .title
+    color #458
+    font-weight 600
 
-pre .tag,
-pre .name,
-pre .attribute
-  color #000080
-  font-weight normal
+  .tag,
+  .name,
+  .attribute
+    color #000080
+    font-weight normal
 
-pre .regexp,
-pre .link
-  color #009926
+  .regexp,
+  .link
+    color #009926
 
-pre .symbol,
-pre .bullet
-  color #990073
+  .symbol,
+  .bullet
+    color #990073
 
-pre .built_in,
-pre .builtin-name
-  color #0086b3
+  .built_in,
+  .builtin-name
+    color #0086b3
