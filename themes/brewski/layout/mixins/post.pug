@@ -1,6 +1,5 @@
 mixin postInfo(item)
-	.post-info
-		a
+	span.post-time
 		!= full_date(item.date, config.date_format)
 		if item.from && (is_home() || is_post())
 			a.post-from(href=item.from, target='_blank', title=item.from)
@@ -57,12 +56,18 @@ mixin postList()
 
 //- Post Page
 mixin post(item)
-	.post
-		article.post-block
+	article.post
+		header.post-header
+			p.post-info
+				+postInfo(item)
 			h1.post-title
 				+postTitle(item.title)
-			+postInfo(item)
-			.post-content
-				!= item.content
+			.eyecatch
+				img(src="/img/eyecatch-example.jpg",width="728",height="460",alt="アイキャッチ画像")
+				// post.imageに差し替える
+
+		section.post-content
+			!= item.content
+		section.post-footer
 			.post-writer
 				+postWriter(item.writer)

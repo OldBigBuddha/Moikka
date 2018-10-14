@@ -1,15 +1,14 @@
-$primary = #2007FF
+@import "variables.styl"
 
 body
-  color #222831
+  color $black
   font-size calc(110% + 0.1vw)
   line-height 1.6
-  background-color #fff
+  background-color $base
   font-family system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
 
-.wrap 
-  width 90%
-  max-width 45em
+.wrap
+  width 96%
   margin 0 auto
 
 h1, h2, h3, h4, h5, h6
@@ -181,10 +180,10 @@ li
   margin-left 1em
   listtype disc
 
-img
-  display block
-  max-width 100%
-  margin 1em auto
+// img
+//   display block
+//   max-width 100%
+//   margin 1em auto
 
 .tip
   position relative
@@ -250,7 +249,8 @@ img
 
 main
   &.container
-    margin 2em .7em
+    background: white;
+    padding 25px
     min-height 30vh
 
 @media screen and (max-width: 700px) {
