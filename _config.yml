@@ -87,6 +87,38 @@ theme_config:
     About: /about
     RSS: /atom.xml
 
+# TOC(目次)
+toc:
+  # Use headings whose depth is at most maxdepth.
+  maxdepth: 3
+
+  # The CSS Class for the toc. (Default is false)
+  class: toc
+
+  # Choose which slugify function you want to use. Currently support uslug (Default) and transliteration.
+  slugify: transliteration
+
+  # Select whether to enable decode entities. ( Default is false and please see #15).
+  decodeEntities: false
+
+  # Whether should have an anchor for each headings. (Default is false)
+  anchor:
+    # Where should the anchor be, before the title, or after the title. (Default is after);
+    position: after
+
+    # Which symbol you want the anchor be. (Default is #);
+    symbol: '#'
+
+    # The CSS class for the anchor, (Default is header-anchor);
+    style: header-anchor
+
+# hexojs/hexo-autoprefixer: Autoprefixer plugin for Hexo. - https://github.com/hexojs/hexo-autoprefixer
+autoprefixer:
+  exclude:
+    - '*.min.css'
+  browsers:
+    - 'last 2 versions'
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
