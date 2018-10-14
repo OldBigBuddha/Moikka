@@ -1,15 +1,37 @@
 @import "variables.styl"
 
 body
+  margin 0
   color $black
   font-size calc(110% + 0.1vw)
   line-height 1.6
   background-color $base
   font-family system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
 
+@media (min-width: 768px)
+  main#main
+    float left
+    width 66%
+    // margin-right .75em
+  aside#side-bar
+    float right
+    width 33.33%
+    height 100%
+@media (max-width: 767px)
+  main#main
+    width 100%
+    margin 0
+  #side-bar
+    width: 100%;
+
 .wrap
   width 96%
   margin 0 auto
+
+.container
+  background: white;
+  padding 25px
+  min-height 30vh
 
 h1, h2, h3, h4, h5, h6
   line-height 1.2
@@ -247,12 +269,6 @@ li
 #disqus_thread
   margin-bottom 2em
 
-main
-  &.container
-    background: white;
-    padding 25px
-    min-height 30vh
-
 @media screen and (max-width: 700px) {
   main.container,
   .home.post-list,
@@ -266,6 +282,7 @@ main
 }
 
 footer
+  width 100%
   .copyright
     font-size .8em
     margin 4em 4em
