@@ -8,11 +8,10 @@ block description
     meta(name='description', content=desc)
 
 block container
-    include mixins/post.pug
     .post
         article.post-block
             h1.post-title
-                +postTitle(page.title)
+                != page.title
             .post-content
                 != page.content
 
