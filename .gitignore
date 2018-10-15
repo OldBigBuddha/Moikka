@@ -1,2 +1,7 @@
-public/
-node_modules/
+/.c9
+/.c9revisions
+/.dotfiles
+/node_modules
+/public
+.vimrc
+.zshrc
