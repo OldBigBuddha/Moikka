@@ -1,7 +1,7 @@
-/public/
-/node_modules/
-/.dotfiles
-/.vimrc
-/.zshrc
-/.c9/
+/.c9
 /.c9revisions
+/.dotfiles
+/node_modules
+/public
+.vimrc
+.zshrc
