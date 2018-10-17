@@ -1,5 +1,6 @@
 @import "variables.styl"
 
+
 body
   margin 0
   color $black
@@ -8,21 +9,14 @@ body
   background-color $base
   font-family system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
 
-@media (min-width: 768px)
-  main#main
-    float left
-    width 66%
-    // margin-right .75em
-  aside#side-bar
-    float right
-    width 33.33%
-    
-@media (max-width: 767px)
-  main#main
-    width 100%
-    margin 0
-  #side-bar
-    width: 100%;
+
+main#main
+  float left
+  width 66%
+  
+aside#side-bar
+  float right
+  width 33.33%
 
 .wrap, .barba-container
   width 96%
@@ -34,6 +28,18 @@ body
   background: white;
   padding 25px
   min-height 30vh
+  
+@media (max-width: 767px)
+  main#main
+    width 100%
+    margin 0
+  #side-bar
+    width: 100%;
+  main.container,
+  .home.post-list,
+  .agitrchive {
+    margin-top: 0;
+  }
 
 h1, h2, h3, h4, h5, h6
   line-height 1.2
@@ -92,36 +98,26 @@ table tbody th :last-child,
 table tbody td :last-child
   margin-bottom 0
 
+blockquote
+  margin 2em 0
+  padding .5em 1.3em
+  border .05em solid #eee
+  border-radius .1em
+  bordercolor #9e1900
+  borderwidth .1em
+  &.warning
+    bordercolor #f0ad4e
+    borderwidth 4px
 
-.logo-image
-  &:hover
-    animation sway 1.4s easeout both
+li
+  margin-left 1em
+  listtype disc
 
-@keyframes sway {
-	10%,
-  90% {
-		transform: rotate(-15deg);
-	}
+// img
+//   display block
+//   max-width 100%
+//   margin 1em auto
 
-	20%,
-  80% {
-		transform: rotate(15deg);
-	}
-
-	30%,
-  50%,
-  70% {
-		transform: rotate(-10deg);
-	}
-
-	40%,
-  60% {
-		transform: rotate(10deg);
-	}
-}
-
-.logo-image
-  height 5em
 
 .home
   &.post-list
@@ -134,7 +130,6 @@ table tbody td :last-child
         list-style initial
     .read-more
       color #9e1900
-
 .home.post-list .post-content h2:before,
 .home.post-list .post-content h3:before,
 .home.post-list .post-content h4:before,
@@ -159,52 +154,9 @@ table tbody td :last-child
     width 6em
     font-size .9em
     color #393e46
-
 .archive .post-time,
 .archive .post-title-link
   font-size 1rem
-
-.post
-  padding-top
-    .1em
-      .post-block
-        .post-title
-          margin .65em 0
-          font-size 1.5em
-
-.post-block
-  .post-info
-    color #393e46
-    margin 1.2em 0
-    span
-      margin-left .5rem
-    a.post-from
-      margin-left .5rem
-      padding .2em .3em
-      border-radius .3em
-      font-size .7em
-      color #fff
-      background-color #e36b6b
-
-blockquote
-  margin 2em 0
-  padding .5em 1.3em
-  border .05em solid #eee
-  border-radius .1em
-  bordercolor #9e1900
-  borderwidth .1em
-  &.warning
-    bordercolor #f0ad4e
-    borderwidth 4px
-
-li
-  margin-left 1em
-  listtype disc
-
-// img
-//   display block
-//   max-width 100%
-//   margin 1em auto
 
 .tip
   position relative
@@ -241,41 +193,3 @@ li
   z-index 10
   #mask-image
     max-width 95%
-
-.paginator
-  margin 2em 0
-  display flex
-  justify-content space-around
-
-  .prev,
-  .next
-    position relative
-    box-shadow 0 .3em #801501
-    display inline-block
-    margin 0 .2em
-    padding .3em 1.5em
-    border-radius 5px
-    color #fff
-    background-color #9e1900
-    font-weight 600
-
-  .prev:hover,
-  .next:hover
-    box-shadow 0 .2em #801501
-    top .1em
-
-.ds-thread,
-#disqus_thread
-  margin-bottom 2em
-
-@media screen and (max-width: 700px) {
-  main.container,
-  .home.post-list,
-  .archive {
-    margin-top: 0;
-  }
-  .ds-thread,
-  #disqus_thread {
-    margin: 2em .8em;
-  }
-}
