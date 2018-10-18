@@ -16,5 +16,19 @@ block container
         p Here is qeustion form
         != page.content
 
+      .form
+        form(name="question", method="post", netlify)
+          p
+            label(for="name") お名前:
+            input(type="text", name="name")
+
+          p
+            label(for="content") 質問内容
+          p
+            textarea(name="content", cols="30")
+
+          p
+            button(type="submit") 送信
+
 block copyright
   include partial/copyright.pug
