@@ -1,17 +1,18 @@
 extends partial/layout.pug
 
 block site_title
-    != page.title + ' | ' + config.title
+    != page.title + ' • ' + config.title
 
 block description
     - var desc = page.desc || page.title + ' - ' + config.author;
     meta(name='description', content=desc)
 
 block container
+    include mixins/post.pug
     .post
         article.post-block
             h1.post-title
-                != page.title
+                +postTitle(page.title)
             .post-content
                 != page.content
 
