@@ -1,13 +1,73 @@
+@import "../variables.styl"
+
 .post-writer
+  margin 20px 0
+  padding: 15px 17px 17px;
+  position relative
+  border 3px solid #ddd
   display flex
   align-items center
-  background
-  .writer-portfolio
-    height 100px;
-    width 100px
+  background $base
+.writer-portfolio
+  flex-basis: 80px;
+  width: 80px;
+  max-width: 80px;
+  height: 80px;
+  border-radius 50%
+  box-shadow 0px 0px 0px 3px $accent;
+  transition .5s
+  &:hover
+    box-shadow 0px 0px 5px 4px $accent;
+  img
     border-radius 50%
-    border 1px black solid
-    &:hover
-      // box-shadow
-  div
-    flex-basis 80%
+.writer-content
+  display: block;
+  margin: 0 0 0 22px;
+  h2
+    margin: 3px 0px 3px 0px;
+    font-size: 11px;
+    line-height: 30px;
+    letter-spacing: .05rem;
+    height 30px
+    &:before
+      content "この記事を書いた人:"
+  .writer-name
+    padding 0 0 0 5px
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: .05rem;
+    color #5491E8
+.writer-description
+  margin 0
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: .05rem;
+.writer-sns
+  display flex
+  padding 0
+  margin 1em 0 0 0 
+  list-style none
+  li
+    height 35px
+    min-width 35px
+    text-align center
+    padding 0
+    margin-right 5px
+    a
+      font-size 20px
+      line-height 35px
+      width 100%
+      height 100%
+      color white
+      border-radius 5px
+      transition .35s
+      &.fa-twitter
+        background #00ACED
+      &.fa-instagram
+        background: #d6249f;
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+      &.fa-facebook-f
+        background #4A63A2
+      &:hover
+        boxShadow()
