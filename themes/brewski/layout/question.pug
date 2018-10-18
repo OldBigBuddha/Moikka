@@ -16,18 +16,15 @@ block container
         p Here is qeustion form
         != page.content
 
-      #form-main
-        #form-div
-          form#form1.form
-            p.name
-              input#name.feedback-input(name='name', type='text', class='validate[required,custom[onlyLetter],length[0,100]]', placeholder='Name')
-            p.email
-              input#email.feedback-input(name='email', type='text', class='validate[required,custom[email]]', placeholder='Email')
-            p.text
-              textarea#comment.feedback-input(name='text', class='validate[required,length[6,300]]', placeholder='Comment')
-            .submit
-              input#button-blue(type='submit', value='SEND')
-              .ease
+        form#form1.form
+          p.name
+            label(for="name") お名前(匿名可)
+            input#name.question-input(name='name', type='text', placeholder='無記入で匿名になります')
+          p.text
+            label(for="question") 質問
+            textarea#comment.question-input(name='question' placeholder='質問内容を入力してください', required)
+          .submit
+            button(type='submit') 送信
 
 block copyright
   include partial/copyright.pug
