@@ -16,19 +16,18 @@ block container
         p Here is qeustion form
         != page.content
 
-      .form
-        form(name="question", method="post", netlify)
-          p
-            label(for="name") お名前:
-            input(type="text", name="name")
-
-          p
-            label(for="content") 質問内容
-          p
-            textarea(name="content", cols="30")
-
-          p
-            button(type="submit") 送信
+      #form-main
+        #form-div
+          form#form1.form
+            p.name
+              input#name.feedback-input(name='name', type='text', class='validate[required,custom[onlyLetter],length[0,100]]', placeholder='Name')
+            p.email
+              input#email.feedback-input(name='email', type='text', class='validate[required,custom[email]]', placeholder='Email')
+            p.text
+              textarea#comment.feedback-input(name='text', class='validate[required,length[6,300]]', placeholder='Comment')
+            .submit
+              input#button-blue(type='submit', value='SEND')
+              .ease
 
 block copyright
   include partial/copyright.pug
