@@ -16,13 +16,13 @@ block container
         p Here is qeustion form
         != page.content
 
-        form#form1.form
+        form(name="question", method="POST", netlify)
           p.name
             label(for="name") お名前(匿名可)
             input#name.question-input(name='name', type='text', placeholder='無記入で匿名になります')
           p.text
-            label(for="question") 質問
-            textarea#comment.question-input(name='question' placeholder='質問内容を入力してください', required)
+            label(for="content") 質問
+            textarea#content.question-input(name='content' placeholder='質問内容を入力してください', required)
           .submit
             button(type='submit') 送信
 
