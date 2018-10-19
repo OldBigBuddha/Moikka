@@ -2,7 +2,7 @@
 if theme.google_analytics
     script.
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', '#{theme.google_analytics}']);
+        _gaq.push(['_setAccount', theme.google_analytics]);
         _gaq.push(['_trackPageview']);
 
         (function () {
@@ -10,10 +10,23 @@ if theme.google_analytics
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
+
 script(src='https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js')
 script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+script(src=url_for('/js/control-banner.js'))
+//- script(
+//-     id="cookieinfo",
+//- 	src="//cookieinfoscript.com/js/cookieinfo.min.js",
+//- 	data-bg="#EFF3F6",
+//- 	data-fg="#3e3e3e",
+//- 	data-link="#3E5D59",
+//-     data-message="私達は、サイト運営の向上の為、Cookieを利用しています。\n引き続き当サイトをお使い続けることをもって、Moikka!のCookie使用に同意いただいたものとします。"
+//-     data-linkmsg="詳しくは、当サイトのプライバシーポリシーをご覧ください。"
+//-     data-close-text="分かりました",
+//-     data-moreinfo=url_for('/privacy_policy'),
+//-     data-text-align="left"
+//-     )
 script.
     document.addEventListener('DOMContentLoaded', function() {
         Barba.Pjax.start()
     })
-    
