@@ -1,76 +1,48 @@
 @import './variables.styl'
 
-.logo-image
-  height 5em
+.main-header
+	padding 1rem 5rem
 
 .logo-image
-  &:hover
-    animation sway 1.4s easeout both
-
-@keyframes sway {
-	10%,
-  90% {
-		transform: rotate(-15deg);
-	}
-
-	20%,
-  80% {
-		transform: rotate(15deg);
-	}
-
-	30%,
-  50%,
-  70% {
-		transform: rotate(-10deg);
-	}
-
-	40%,
-  60% {
-		transform: rotate(10deg);
-	}
-}
-
-header.main-header
-	min-height 7rem
-	padding-top 20px
-	flexbox()
-	align-items center
-	justify-content space-between
-
-	#logo
-		display: inline-block;
-		max-height 5rem
+	position relative
+	display inline-block
+	margin 0 auto
+	margin-bottom 1rem
+	svg
+		height 5rem
 		width auto
-		margin 1rem
-		position: relative;
 
-	.nav-list
-		flexbox()
-		flex-wrap wrap
-		justify-content center
+.nav-wrap
+	padding-top 1em
+	padding-bottom .5em
+	text-align center
 
-	.nav-list-link
-		&:hover
-			border-bottom .2em solid $primary
-			transition 150ms ease-in-out
+.nav
+	list-style none
+	padding 0
+	margin 0rem -.5em
 
-	.nav-list-item
-		margin 0
-		display inline-block
-		padding .8em
-		a
-			font-size .9em
-			line-height 1.4
+.nav li
+	display inline-block
+	float none
+	margin-left .5em
+	margin-right .5em
 
-@media (min-width: 768px)
-	#logo
-		margin-right auto
-@media (max-width: 767px)
-	header.main-header
-		flex-wrap wrap
-		justify-content center
-	#logo
-		height 100%
-		width auto
-		margin 1rem
-		margin-right auto
+.nav .link-block-styled, .nav a
+	text-decoration none
+	&:hover
+		border-bottom .2em solid $primary
+		transition 150ms ease-in-out
+
+@media (min-width: 38em)
+	li
+		margin-bottom .25em
+@media (min-width: 60em)
+	.nav-wrap
+		text-align left
+	.logo-image
+		float left
+		margin-bottom 0
+	.nav
+		text-align right
+		margin 2rem -.5em
