@@ -9,7 +9,7 @@ description: 留学中の高校生があなたのフィンランドに関する�
 keywords:
 author: Moikka！編集部
 language: ja
-timezone: Asia/Tokyo
+timezone: Europe/Helsinki
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -80,7 +80,6 @@ pagination_dir: page
 theme: brewski
 theme_config:
   logo:
-  google_analytics:
   copyright:
     since: 2018
     name: Moikka!編集部
