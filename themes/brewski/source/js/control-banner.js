@@ -1,12 +1,14 @@
 $(() => {
   $("#cookie-banner")
-    .fadeIn(2000)
-    .animate({
-      "bottom": "0"
-    }, {
-      duration: 1000,
-      queue: false
-    });
+  .css("display", "flex")
+  .hide()
+  .fadeIn(1500)
+  .animate({
+    "bottom": "0",
+  }, {
+    duration: 1500,
+    queue: false
+  });
 
   $("#button-agree").on("click", () => {
     $("#cookie-banner")
