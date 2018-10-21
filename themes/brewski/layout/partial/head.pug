@@ -10,7 +10,6 @@ title
 block description
     meta(name='description', content=config.description ? config.description : __('meta_description'))
 
-
 link(rel='icon', href=url_for(theme.favicon))
 link(rel='stylesheet', href='https://unpkg.com/ress/dist/ress.min.css')
 link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.4.1/css/all.css', integrity='sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz', crossorigin='anonymous')
@@ -23,3 +22,11 @@ link(rel='stylesheet', href=url_for('css/post/notations.css'))
 link(rel='stylesheet', href=url_for('css/post/toc.css'))
 link(rel='stylesheet', href=url_for('css/post/footer.css'))
 link(rel='search', type='application/opensearchdescription+xml', href=url_for('atom.xml'), title=config.title)
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+script(async src="https://www.googletagmanager.com/gtag/js?id=UA-127799366-1")
+script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-127799366-1');
