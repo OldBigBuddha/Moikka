@@ -8,30 +8,28 @@ body
   background-color $base
   font-family system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
 
-@media (min-width: 768px)
-  main#main
-    float left
-    width 66%
-    // margin-right .75em
-  aside#side-bar
-    float right
-    width 33.33%
+main#main
+  float left
+  width 66%
+aside#side-bar
+  float right
+  width 33.33%
     
 @media (max-width: 767px)
   main#main
     width 100%
     margin 0
   #side-bar
-    width: 100%;
+    width 100%
 
 .wrap, .barba-container
   width 96%
   margin 0 auto
-  overflow: hidden;
-  zoom: 1;
+  overflow hidden
+  zoom 1
   padding-bottom 3em
 .container
-  background: white;
+  background white
   padding 25px
   min-height 30vh
 
@@ -133,72 +131,13 @@ table tbody td :last-child
 .archive .post-title-link
   font-size 1rem
 
-.post
+.post // ここいる？
   padding-top
     .1em
       .post-block
         .post-title
           margin .65em 0
           font-size 1.5em
-
-.post-block
-  .post-info
-    color #393e46
-    margin 1.2em 0
-    span
-      margin-left .5rem
-    a.post-from
-      margin-left .5rem
-      padding .2em .3em
-      border-radius .3em
-      font-size .7em
-      color #fff
-      background-color #e36b6b
-
-blockquote
-  margin 2em 0
-  padding .5em 1.3em
-  border .05em solid #eee
-  border-radius .1em
-  bordercolor #9e1900
-  borderwidth .1em
-  &.warning
-    bordercolor #f0ad4e
-    borderwidth 4px
-
-li
-  margin-left 1em
-  listtype disc
-
-// img
-//   display block
-//   max-width 100%
-//   margin 1em auto
-
-.tip
-  position relative
-  margin 2em 0
-  padding .6em 1.2em .6em 1.2em
-  border-left 4px solid #f66
-  border borderright-radius .06em
-  background-color #f8f8f8
-  br
-    display none
-  &:before
-    position absolute
-    top 14px
-    left -12px
-    content "!"
-    width 20px
-    height 20px
-    border-radius 100%
-    color #fff
-    font-size 14px
-    line-height 20px
-    font-weight 600
-    text-align center
-    background-color #f66
-    font-family "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif
 
 #mask
   position fixed
@@ -210,139 +149,3 @@ li
   z-index 10
   #mask-image
     max-width 95%
-
-.paginator
-  margin 2em 0
-  display flex
-  justify-content space-around
-
-  .prev,
-  .next
-    position relative
-    box-shadow 0 .3em #801501
-    display inline-block
-    margin 0 .2em
-    padding .3em 1.5em
-    border-radius 5px
-    color #fff
-    background-color #9e1900
-    font-weight 600
-
-  .prev:hover,
-  .next:hover
-    box-shadow 0 .2em #801501
-    top .1em
-
-.ds-thread,
-#disqus_thread
-  margin-bottom 2em
-
-@media screen and (max-width: 700px) {
-  main.container,
-  .home.post-list,
-  .archive {
-    margin-top: 0;
-  }
-  .ds-thread,
-  #disqus_thread {
-    margin: 2em .8em;
-  }
-}
-
-code, pre
-  font-size .8em
-  background-color #f8f8f8
-  font-family "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace
-
-.highlight
-  position relative
-  margin 1em 0
-  border-radius .02em
-  line-height 1.1em
-  background-color #f8f8f8
-  overflow-x auto
-  .gutter
-    display none
-
-  .code
-    pre
-      padding 1.2em 1.4em
-      line-height 1.5em
-      margin 0
-      .line
-        width auto
-        height 1.5em
-
-.highlight table,
-.highlight tr,
-.highlight td
-  width 100%
-  border-collapse collapse
-  padding 0
-  margin 0
-
-pre
-  color #525252
-  .subst
-    font-weight normal
-  .meta
-    color #999
-    font-weight 600
-  .deletion
-    background #fdd
-  .addition
-    background #dfd
-  .emphasis
-    font-style italic
-  .strong
-    font-weight 600
-
-  .comment, .quote
-    color #998
-    font-style italic
-
-  .keyword,
-  .selector-tag,
-  .subst
-    color #222831
-    font-weight 600
-
-  .number,
-  .literal,
-  .variable,
-  .template-variable,
-  .tag .attr
-    color #008080
-
-  .string,
-  .doctag
-    color #d14
-
-  .title,
-  .section,
-  .selector-id
-    color #900
-    font-weight 600
-
-  .type,
-  .class .title
-    color #458
-    font-weight 600
-
-  .tag,
-  .name,
-  .attribute
-    color #000080
-    font-weight normal
-
-  .regexp,
-  .link
-    color #009926
-
-  .symbol,
-  .bullet
-    color #990073
-
-  .built_in,
-  .builtin-name
-    color #0086b3
