@@ -1,22 +1,26 @@
 @import "../variables.styl"
-
-header.post-header
-  padding 0
-  margin-bottom 1.5em
-p.post-info
-  margin 0
-.post-time
-  opacity .7
-  font-size .85em
-h1.post-title
-  font-size 1.5em
-  margin .3em 0
-.eyecatch
-  text-align center
-  overflow hidden
-  position relative
-  border-radius 6px
-  img
-    border-radius 6px
-    margin 0
-    height auto
+@import "../util.styl"
+.post-block
+	header.post-header
+		padding 0
+		margin-bottom 1.5em
+		p.post-info
+			margin 0
+		.post-time
+			color $base
+			padding .2em .3em
+			border-radius .3em
+			font-size .7em
+			background-color $gray
+		h1.post-title
+			font-size 1.5em
+			margin .3em 0
+		.eyecatch
+			text-align center
+			overflow hidden
+			position relative
+			border-radius 6px
+			img
+				border-radius 6px
+				margin 0
+				height auto

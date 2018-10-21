@@ -1,10 +1,25 @@
+@import "../variables.styl"
+@import "../util.styl"
+
 .post-writer
+  margin 20px 0
+  padding: 15px 17px 17px;
+  position relative
+  border 3px solid #ddd
   display flex
   align-items center
-  background
-  .writer-portfolio
-    height 100px;
-    width 100px
+  background $base
+.writer-portfolio
+  flex-basis: 80px;
+  width: 80px;
+  max-width: 80px;
+  height: 80px;
+  border-radius 50%
+  box-shadow 0px 0px 0px 3px $accent;
+  transition .5s
+  &:hover
+    box-shadow 0px 0px 5px 4px $accent;
+  img
     border-radius 50%
 .writer-content
   display: block;
@@ -32,7 +47,7 @@
 .writer-sns
   display flex
   padding 0
-  margin 1em 0 0 0
+  margin 1em 0 0 0 
   list-style none
   li
     height 35px
@@ -56,8 +71,10 @@
       &.fa-facebook-f
         background #4A63A2
       &:hover
-        boxShadow()
+        boxshadow()
 
+// pagination用ファイルを作って@importする？
+//post-footerとしてまとまっているので現状維持で。
 .paginator
   margin 2em 0
   display flex
@@ -79,13 +96,3 @@
   .next:hover
     box-shadow 0 .2em #801501
     top .1em
-
-.ds-thread,
-#disqus_thread
-  margin-bottom 2em
-
-@media (max-width: 767px)
-  .ds-thread,
-  #disqus_thread {
-    margin: 2em .8em;
-  }
