@@ -76,7 +76,6 @@ pagination_dir: page
 theme: brewski
 theme_config:
   logo:
-  google_analytics: UA-127799366-1
   copyright:
     since: 2018
     name: Moikka!編集部
