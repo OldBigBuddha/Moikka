@@ -1,48 +1,13 @@
--
-	var menuItems = [
-		{
-			title: "過去の記事", 
-			url: "/posts"
-		},
-		{
-			title: "『Moikka!』に質問", 
-			url: "/question"
-		},
-		{
-			title: "『Moikka!』とは？", 
-			url: "/about"
-		},
-		{
-			title: "プライバシーポリシー", 
-			url: "/privacy_policy"
-		},
-		{
-			title: "免責事項", 
-			url: "/disclaimers"
-		}
-	];
-
 footer#main-footer
 	.inner-footer
 		.fblock
-			// site-map
-			h4 sitemap
-			ul.footersitemap
-				each item in menuItems
-					li.nav-list-item
-						- var re = /^(http|https):\/\/*/gi;
-						- var tar = re.test(item.url) ? "_blank" : "_self"
-						- var type = url.indexOf('.html') === -1 ? 'no-barba' : ''
-						a.nav-list-link(href=url_for(item.url) target=tar class=type)
-							!= item.title
-		.fblock
-			// tag
 			h4 Tag
+			ul.footersitemap
+			// tag
 		.fblock
 			h4 Contact
-			// contact
 			.footercontact
-				a.logo.logo-footer.footercontact-logo(href='')
+				a.logo.logo-footer.footercontact-logo(href="", alt="svg-logo")
 					img(src='img/logo.svg')
 				p.footercontact-text 
 					| フィンランドに留学生に現地の情報が生で聞ける新感覚メディア、Moikka!

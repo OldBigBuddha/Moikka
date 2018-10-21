@@ -14,6 +14,8 @@ footer#main-footer
   flex-basis 30%
   display block
   padding 1em 0
+  &:first-child
+    flex-grow 2
   h4
     color #B9CAD7
 .footersitemap
@@ -23,7 +25,6 @@ footer#main-footer
   li
     margin 8px 0
     font-size 12px
-    opacity 1
     a
       color $base
       &:hover
@@ -38,11 +39,15 @@ footer#main-footer
 	flex 1
 	margin 3px 0 0
 	font-size 12px
-	color #fff
+	color $base
+	a
+    color $base
+    &:hover
+      color #5491E8
 .footercontact-social
 	flexbox()
 	align-items center
-	justify-content space-between
+	justify-content center
 	flex-basis 100%
 	margin 31px 0 0
 	list-style none
@@ -51,6 +56,7 @@ footer#main-footer
 	display block
 	color #fff
 	text-align center
+	margin 0 1em
 	a
 		display block
 		color inherit
@@ -64,7 +70,7 @@ footer#main-footer
   text-align center
   a
     &:hover
-      color #393e46
+      color #5491E8
   p, a
     margin 0
     padding 1em 0
