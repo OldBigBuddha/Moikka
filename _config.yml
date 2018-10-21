@@ -13,7 +13,11 @@ timezone: Asia/Tokyo
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+<<<<<<< HEAD
 url: https://moikka.netlify.com
+=======
+url: https://moikka.media
+>>>>>>> develop
 root: /
 permalink: post/:title
 permalink_defaults:
@@ -80,7 +84,7 @@ theme_config:
   copyright:
     since: 2018
     name: Moikka!編集部
-    url: http://moikka.media
+    url: https://moikka.media
   menu:
     Home: /
     Question: /question
