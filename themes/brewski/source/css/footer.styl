@@ -1,0 +1,78 @@
+@import './variables.styl'
+
+footer#main-footer
+  background $subBlue
+  width 100%
+  color $base
+.inner-footer
+  padding-top 2em;
+  width 92%
+  margin 0 auto
+  flexbox()
+  align-items flex-start
+.fblock
+  flex-basis 30%
+  display block
+  padding 1em 0
+  &:first-child
+    flex-grow 2
+  h4
+    color #B9CAD7
+.footersitemap
+  list-style none
+  border-left #B9CAD7 1px solid
+  padding-left 1em
+  li
+    margin 8px 0
+    font-size 12px
+    a
+      color $base
+      &:hover
+        color #5491E8
+.footercontact
+	flexbox()
+	flex-wrap wrap
+.footercontact-logo
+	flex-basis 146px
+	margin 9px 0 0
+.footercontact-text
+	flex 1
+	margin 3px 0 0
+	font-size 12px
+	color $base
+	a
+    color $base
+    &:hover
+      color #5491E8
+.footercontact-social
+	flexbox()
+	align-items center
+	justify-content center
+	flex-basis 100%
+	margin 31px 0 0
+	list-style none
+.footercontact-social-item
+	position relative
+	display block
+	color #fff
+	text-align center
+	margin 0 1em
+	a
+		display block
+		color inherit
+.copyright
+  font-size .8em
+  margin 0 auto
+  width 92%
+  border-top $base 1px solid
+  text-align center
+  position relative
+  text-align center
+  a
+    &:hover
+      color #5491E8
+  p, a
+    margin 0
+    padding 1em 0
+    color $base
+    font-weight 300
