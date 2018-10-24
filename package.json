@@ -26,6 +26,7 @@
     "babel-preset-es2015": "^6.24.1",
     "del": "^3.0.0",
     "gulp": "3.9.0",
+    "gulp-autoprefixer": "^6.0.0",
     "gulpfile.js": "^2.3.0",
     "run-sequence": "^2.2.1"
   }
