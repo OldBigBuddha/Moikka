@@ -22,8 +22,13 @@ gulp.task('generate', cb => {
   });
 });
 
+gulp.task('copy', () => {
+  gulp.src('./underscores/*')
+  .pipe(gulp.dest("./public"));
+});
+
 gulp.task('build', function(cb) {
-  runSequence('clean', 'generate', cb);
+  runSequence('clean', 'generate', 'copy', cb);
 });
 
 gulp.task('default', ['build']);
