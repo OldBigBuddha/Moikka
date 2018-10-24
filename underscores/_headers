@@ -1,0 +1,14 @@
+/*
+  Link: </css/theme.css>; rel=preload; as=style
+  Link: </css/util.css>; rel=preload; as=style
+  Link: </css/variables.css>; rel=preload; as=style
+  Link: </css/general/header.css>; rel=preload; as=style
+  Link: </css/general/banner.css>; rel=preload; as=style
+  Link: </css/general/footer.css>; rel=preload; as=style
+  Link: </js/control-banner.js>; rel=preload; as=script
+
+/post/*
+  Link: </css/post/header.css>; rel=preload; as=style
+  Link: </css/post/toc.css>; rel=preload; as=style
+  Link: </css/post/notations.css>; rel=preload; as=style
+  Link: </css/post/footer.css>; rel=preload; as=style
