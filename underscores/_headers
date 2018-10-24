@@ -1,7 +1,12 @@
+/ Header
+[[headers]]
+  for = "*.js" # js files should be set this way
+  [headers.values]
+    Cache-Control = "max-age=2592000"
+
+/ HTTP/2
 /*
   Link: </css/theme.css>; rel=preload; as=style
-  Link: </css/util.css>; rel=preload; as=style
-  Link: </css/variables.css>; rel=preload; as=style
   Link: </css/general/header.css>; rel=preload; as=style
   Link: </css/general/banner.css>; rel=preload; as=style
   Link: </css/general/footer.css>; rel=preload; as=style
