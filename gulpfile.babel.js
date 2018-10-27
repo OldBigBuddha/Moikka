@@ -1,49 +1,52 @@
 'use strict';
 import gulp from 'gulp';
 import del from 'del';
-import runSequence from 'run-sequence';
 import autoprefixer from 'gulp-autoprefixer';
-import cleanCSS from 'gulp-clean-css';
+import cleanCss from 'gulp-clean-css';
 import Hexo from 'hexo';
 
 const hexo = new Hexo(process.cwd(), {});
 
-const clean = () => del(['public/**/*']);
+const clean = () => {
+  console.log("Start Clean '/public' ");
+  del(['public/**/*']);
+}
 
-const generate = cb => {
+const generate = () => {
+  console.log("Start 'generate" );
   hexo.init().then(() => {
     return hexo.call('generate', {
         watch: false
     });
   })
   .then(() => hexo.exit())
-  .then(() => cb())
   .catch(err => {
       console.log(err);
-      hexo.exit(err);
-      return cb(err);
+      return hexo.exit(err);
   });
 };
 
-const cleanCSS = () => {
+const formatCSS = () => {
+  console.log("Start 'formatCSS" );
   return gulp.src(['./public/css/**/*.css'])
     .pipe(autoprefixer({
       browsers: ['last 2 version', 'iOS >= 8.1', 'Android >= 4.4'],
       cascade: false
     }))
-    .pipe(cleanCSS())
+    .pipe(cleanCss())
     .pipe(gulp.dest('./public/css'));
 };
 
 const copy = () => {
-  gulp.src('./underscores/*')
+  console.log("Start 'copy" );
+  return gulp.src('./underscores/*')
   .pipe(gulp.dest("./public"));
 };
 
-export default cd => {
+
+export default () => {
   clean();
   generate();
-  cleanCSS();
+  // formatCSS();
   copy();
-  cd();
 }
