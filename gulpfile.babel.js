@@ -8,13 +8,13 @@ import Hexo from 'hexo';
 
 const hexo = new Hexo(process.cwd(), {});
 
-gulp.task('clean', () => del(['public/**/*']));
+const clean = () => del(['public/**/*']);
 
-gulp.task('generate', cb => {
+const generate = cb => {
   hexo.init().then(() => {
-      return hexo.call('generate', {
-          watch: false
-      });
+    return hexo.call('generate', {
+        watch: false
+    });
   })
   .then(() => hexo.exit())
   .then(() => cb())
@@ -23,25 +23,27 @@ gulp.task('generate', cb => {
       hexo.exit(err);
       return cb(err);
   });
-});
+};
 
-gulp.task('cleanCSS', () => {
+const cleanCSS = () => {
   return gulp.src(['./public/css/**/*.css'])
-              .pipe(autoprefixer({
-                browsers: ['last 2 version', 'iOS >= 8.1', 'Android >= 4.4'],
-                cascade: false
-              }))
-              .pipe(cleanCSS())
-              .pipe(gulp.dest('./public/css'))
-});
+    .pipe(autoprefixer({
+      browsers: ['last 2 version', 'iOS >= 8.1', 'Android >= 4.4'],
+      cascade: false
+    }))
+    .pipe(cleanCSS())
+    .pipe(gulp.dest('./public/css'));
+};
 
-gulp.task('copy', () => {
+const copy = () => {
   gulp.src('./underscores/*')
   .pipe(gulp.dest("./public"));
-});
+};
 
-gulp.task('build', function(cb) {
-  runSequence('clean', 'generate', 'cleanCSS', 'copy', cb);
-});
-
-gulp.task('default', ['build']);
+export default cd => {
+  clean();
+  generate();
+  cleanCSS();
+  copy();
+  cd();
+}
