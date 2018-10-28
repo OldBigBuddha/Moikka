@@ -10,7 +10,7 @@ const hexo = new Hexo(process.cwd(), {});
 const clean = () => del(['public/**/*']);
 
 const generate = () => {
-  hexo.init().then(() => {
+  return hexo.init().then(() => {
     return hexo.call('generate', {
         watch: false
     });
@@ -37,5 +37,5 @@ const copy = () => {
   .pipe(gulp.dest("./public"));
 };
 
-
-export default () => gulp.series(clean, generate, gulp.parallel(formatCSS, copy))();
+export default gulp.series([clean, generate, gulp.parallel(formatCSS, copy)])();
+// gulp.task('default', gulp.series([clean, generate, gulp.parallel(formatCSS, copy)])());
