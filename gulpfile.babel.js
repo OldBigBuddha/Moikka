@@ -7,13 +7,9 @@ import Hexo from 'hexo';
 
 const hexo = new Hexo(process.cwd(), {});
 
-const clean = () => {
-  console.log("Start Clean '/public' ");
-  del(['public/**/*']);
-}
+const clean = () => del(['public/**/*']);
 
 const generate = () => {
-  console.log("Start 'generate" );
   hexo.init().then(() => {
     return hexo.call('generate', {
         watch: false
@@ -27,7 +23,6 @@ const generate = () => {
 };
 
 const formatCSS = () => {
-  console.log("Start 'formatCSS" );
   return gulp.src(['./public/css/**/*.css'])
     .pipe(autoprefixer({
       browsers: ['last 2 version', 'iOS >= 8.1', 'Android >= 4.4'],
@@ -38,15 +33,9 @@ const formatCSS = () => {
 };
 
 const copy = () => {
-  console.log("Start 'copy" );
   return gulp.src('./underscores/*')
   .pipe(gulp.dest("./public"));
 };
 
 
-export default () => {
-  clean();
-  generate();
-  // formatCSS();
-  copy();
-}
+export default () => gulp.series(clean, generate, gulp.parallel(formatCSS, copy))();
