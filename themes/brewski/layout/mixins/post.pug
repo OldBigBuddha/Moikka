@@ -20,15 +20,18 @@ mixin postWriter(writer)
 
 //- Index Page
 mixin posts()
-	ul.home.post-list
+	.home.post-list
 		- page.posts.each(function (item) {
-			li.post-list-item
-				article.post-block
-					h2.post-title
-						a.post-title-link(href=url_for(item.path) class="no-barba")
+			.post-card
+				.card-eyecatch
+					img(src="/img/eyecatch-example.jpg",alt="アイキャッチ画像")
+					// post.imageに差し替える
+				.card-description
+					.card-info
+						h2.card-title
 							+postTitle(item.title)
-					+postInfo(item)
-					.post-content
+						+postInfo(item)
+					.card-content
 						!= item.excerpt
 					a.read-more(href=url_for(item.path))
 						!= __('read_more')
