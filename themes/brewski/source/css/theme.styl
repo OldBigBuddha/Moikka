@@ -12,6 +12,8 @@ body
 	line-height 1.6
 	background-color $base
 	font-family system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
+	overflow hidden
+	zoom 1
 
 #menu
 	background $gray
@@ -19,6 +21,8 @@ body
 	width 100%
 	height 100vh
 	z-index 1
+	overflow hidden
+	zoom 1
 
 #container
 	background $base
@@ -61,7 +65,9 @@ a:active
 			& > ul
 				list-style initial
 		.read-more
-			color #9e1900
+			color #5491e8
+		.post-title-link
+			color $black
 
 .home.post-list .post-content h2:before,
 .home.post-list .post-content h3:before,

@@ -6,12 +6,12 @@ html(lang=config.language)
 		#menu
 			include menu.pug
 		#container
-		include header.pug
+			include header.pug
 			.wrap#barba-wrapper
 				.barba-container
 					main.container#main
 						block container
 						block pagination
-		include footer.pug
+			include footer.pug
 		include cookiebanner.pug
 		include scripts.pug
