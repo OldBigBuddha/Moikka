@@ -1,52 +1,106 @@
 @import '../_variables.styl'
 @import '../_util.styl'
-
 .main-header
-	padding 1rem 5rem
-	position -webkit-sticky
-	position sticky
+	position fixed
 	top 0
-	min-height 5rem
-
+	margin 0
+	width 100%
+	z-index 5
 .nav-wrap
-	text-align center
+	display flex
+	align-items center
+	justify-content space-between
 	min-height 2rem
-
+	padding 1rem 5rem
 .logo-image
 	position relative
 	display block
-	margin 0 auto
-	margin-bottom 1rem
+	margin 0
 	img
 		height 80px
 		width auto
-
 .nav
+	text-align right
 	list-style none
 	padding 0
 	margin 0rem
-
 .nav li
 	display inline-block
 	float none
-	margin-left .5em
-	margin-right .5em
-
+	padding 0 .5em
+	border-right 1px solid white
+	&:last-child
+		border none
 .nav .link-block-styled, .nav a
+	display inline-block
 	text-decoration none
+	color white
+	position relative
 	&:hover
-		border-bottom .2em solid $primary
+		color #5491E8
 		transition 150ms ease-in-out
+#hum-menu
+	display none
+	position relative
+	cursor pointer
+	height 1.3em
+	width 1.3em
+	font-size 30px
+	// border 1px black solid
+	box-sizing border-box
+	text-align center
+	vertical-align middle
+	line-height 1em
+	transition all 1.35s ease
+	&:hover
+		background rgba(0,0,0,0.1)
+	span
+		background black
+		display block
+		position absolute
+		width .9em
+		height 3px
+		transition .35s ease-in-out
+		right .2em
+		border-radius 1.5px
+		&:nth-child(1)
+			top 25%
+		&:nth-child(2)
+			top 50%
+		&:nth-child(3)
+			top 75%
 
-@media (min-width: 38em)
-	li
-		margin-bottom .25em
-@media (min-width: 60em)
+#hum-menu.active
+	span:nth-child(1)
+		top 50%
+		transform rotate(-45deg)
+	span:nth-child(3)
+		top 50%
+		transform rotate(45deg)
+	span:nth-child(2)
+		transform translateX(100%)
+		opacity 0
+
+@media (max-width: 60em)
+	.main-header
+		position sticky
+		background white
 	.nav-wrap
-		display flex
-		align-items center
-		justify-content space-between
-	.logo-image
-		margin 0
+		padding 0.5rem 1rem .5rem 2rem
 	.nav
-		text-align right
+		display none
+		#menu &
+			text-align left
+			display block
+			float right
+			width 40%
+			height 100%
+			li
+				width 100%
+				border none
+				border-bottom 1px solid white
+				margin .5rem 0
+	.logo-image > img
+		height 40px
+	#hum-menu
+		display inline-block
