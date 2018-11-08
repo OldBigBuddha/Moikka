@@ -1,27 +1,46 @@
 @import "../_variables.styl"
 @import "../_util.styl"
 
-.post-block
-	header.post-header
-		padding 0
-		margin-bottom 1.5em
-		p.post-info
-			margin 0
-		.post-time
-			color $base
-			padding .2em .3em
-			border-radius .3em
-			font-size .7em
-			background-color $gray
-		h1.post-title
-			font-size 1.5em
-			margin .3em 0
-		.eyecatch
-			text-align center
-			overflow hidden
-			position relative
-			border-radius 6px
-			img
-				border-radius 6px
-				margin 0
-				height auto
+header.post-header
+	padding 0
+	margin-bottom 1.5em
+	position relative
+.eyecatch
+	height 70vh
+	width 100%
+	overflow hidden
+	text-align center
+	img
+		width 100%
+		height auto
+.post-info
+	position absolute
+	z-index 3
+	margin 0
+	bottom 1em
+	left 5em
+.post-title
+	font-size 3em
+	margin 0
+	color $base
+.post-time
+	color $base
+	padding .2em .3em
+	border-radius .3em
+	font-size .7em
+	background-color $gray
+@media (orientation : portrait)
+	.eyecatch
+		height 50vh
+		img
+			height 100%
+			width auto
+	.post-title
+		font-size 2em
+.post-content
+	margin 0 5em
+@media (max-width: 767px)
+	.post-info
+		left 2em
+	.post-content
+		margin 0 2em

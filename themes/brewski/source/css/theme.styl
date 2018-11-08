@@ -1,151 +1,106 @@
 @import "_variables.styl"
 
+
 body
-  margin 0
-  color $black
-  font-size calc(110% + 0.1vw)
-  line-height 1.6
-  background-color $base
-  font-family system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
+	margin 0
+	padding 0
+	font-family 'Roboto', sans-serif
+	box-sizing content-box
+	margin 0
+	color $black
+	font-size calc(110% + 0.1vw)
+	line-height 1.6
+	background-color $base
+	font-family system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
+	overflow hidden
+	zoom 1
 
-main#main
-  float left
-  width 66%
-aside#side-bar
-  float right
-  width 33.33%
+#menu
+	background $gray
+	position fixed
+	width 100%
+	height 100vh
+	z-index 1
+	overflow hidden
+	zoom 1
 
-@media (max-width: 767px)
-  main#main
-    width 100%
-    margin 0
-  #side-bar
-    width 100%
+#container
+	background $base
+	z-index 2
+	position fixed
+	overflow scroll
+	overflow-x hidden
+	height 100vh
+	width 100%
+	transition all .8s ease
+	&.active
+		transform none
 
-.wrap, .barba-container
-  width 96%
-  margin 0 auto
-  overflow hidden
-  zoom 1
-  padding-bottom 3em
 .container
-  background white
-  padding 25px
-  min-height 30vh
+	min-height 30vh
 
 h1, h2, h3, h4, h5, h6
-  line-height 1.2
+	line-height 1.2
 
 ul
-  margin 1rem 0
+	margin 1rem 0
 
 p
-  letter-spacing -.01em
-  line-height 1.8
-  margin 1.2em 0
+	letter-spacing -.01em
+	line-height 1.8
+	margin 1.2em 0
 
 a,
 a:active
-  color #222831
-  text-decoration none
-
-::selection
-  color #fff
-  background-color #9e1900
-
-code
-  padding .2em .4em
-
-iframe,
-video
-  max-width 100%
-  margin 1rem auto
-
-table
-  th
-    font-weight 600
-    border 0
-    text-align left
-    margin 0
-    padding .4em .8em
-
-  thead
-    background-color #fff
-
-  tbody
-    tr
-      border-top 0
-      background-color #fff
-      &:nth-child(2n)
-        background-color #f6f8fa
-    td
-      border .05em solid transparent
-      text-align left
-
-table tbody th :first-child,
-table tbody td :first-child
-  margin-top 0
-
-table tbody th :last-child,
-table tbody td :last-child
-  margin-bottom 0
+	color #5491E8
+	text-decoration none
 
 .home
-  &.post-list
-    margin 2em 0
-    list-style none
-    .post-list-item
-      padding 1em .4em
-    .post-content
-      & > ul
-        list-style initial
-    .read-more
-      color #9e1900
+	&.post-list
+		margin 2em 0
+		list-style none
+		.post-list-item
+			padding 1em .4em
+		.post-content
+			& > ul
+				list-style initial
+		.read-more
+			color #5491e8
+		.post-title
+			margin .65em 0
+			font-size 1.5em
+		.post-title-link
+			color $black
 
 .home.post-list .post-content h2:before,
 .home.post-list .post-content h3:before,
 .home.post-list .post-content h4:before,
 .home.post-list .post-content h5:before,
 .home.post-list .post-content h6:before
-  content ""
+	content ""
 
 .archive
-  .post-item
-    display flex
-    flex-wrap wflexrap
-    padding-left 1.5rem
+	.post-item
+		display flex
+		flex-wrap wflexrap
+		padding-left 1.5rem
 
-  .post-title-link
-    color #9e1900
-    padding-left 1em
-    &:hover
-      border-bottom 0
-      color #801501
+	.post-title-link
+		color #9e1900
+		padding-left 1em
+		&:hover
+			border-bottom 0
+			color #801501
 
-  .post-info
-    width 6em
-    font-size .9em
-    color #393e46
+	.post-info
+		width 6em
+		font-size .9em
+		color #393e46
 
 .archive .post-time,
 .archive .post-title-link
-  font-size 1rem
+	font-size 1rem
 
-.post // ここいる？
-  padding-top
-    .1em
-      .post-block
-        .post-title
-          margin .65em 0
-          font-size 1.5em
-
-#mask
-  position fixed
-  overflow scroll
-  width 100%
-  height 100%
-  padding 1em 0
-  background-color rgba(0, 0, 0, .5)
-  z-index 10
-  #mask-image
-    max-width 95%
+@media (max-width: 60em)
+	#container.active
+		transform translateX(-40%)
