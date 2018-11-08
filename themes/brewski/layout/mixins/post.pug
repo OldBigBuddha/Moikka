@@ -56,10 +56,10 @@ mixin postList()
 mixin post(item)
 	article.post-block
 		header.post-header
-			p.post-info
+			.post-info
+				h1.post-title
+					+postTitle(item.title)
 				+postInfo(item)
-			h1.post-title
-				+postTitle(item.title)
 			.eyecatch
 				img(src="/img/eyecatch-example.jpg",width="728",height="460",alt="アイキャッチ画像")
 				// post.imageに差し替える
