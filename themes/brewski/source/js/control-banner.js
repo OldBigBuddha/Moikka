@@ -29,3 +29,12 @@ $(() => {
     });
   }
 });
+
+$('#hum-menu').click(function() {
+  $(this).toggleClass('active');
+  if ($(this).hasClass('active')) {
+    $('#container').addClass('active');
+  } else {
+    $('#container').removeClass('active');
+  }
+});
