@@ -28,20 +28,21 @@ $(() => {
         });
     });
   }
-});
-
-$('.post-module').hover(function() {
-  $(this).find('.description').stop().animate({
-    height: "toggle",
-    opacity: "toggle"
-  }, 300);
-});
-
-$('#hum-menu').click(function() {
-  $(this).toggleClass('active');
-  if ($(this).hasClass('active')) {
-    $('#container').addClass('active');
-  } else {
-    $('#container').removeClass('active');
-  }
+  $(document).on({
+    "mouseenter": function(){
+      $(this).find('.description').stop().slideToggle()
+    },
+    "mouseleave": function(){
+      $(this).find('.description').stop().slideToggle()
+    }
+  }, ".post-module");
+  
+  $('#hum-menu').click(function() {
+    $(this).toggleClass('active');
+    if ($(this).hasClass('active')) {
+      $('#container').addClass('active');
+    } else {
+      $('#container').removeClass('active');
+    }
+  });
 });
