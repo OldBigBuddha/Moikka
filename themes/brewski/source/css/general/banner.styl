@@ -1,40 +1,44 @@
 @import "../_variables.styl"
 
 #cookie-banner
-  position sticky
-  width 100%
-  z-index 10
-  color white
-  background-color $gray
-  // 読み込み終了後にjQueryで表示させる
-  display none
+	position fixed
+	bottom 0
+	width 100%
+	z-index 10
+	color white
+	background-color $gray
+	// 読み込み終了後にjQueryで表示させる
+	display none
 .banner-inner
-  display flex
-  padding 24px 16px
-  justify-content space-between
-  align-items center
-  p
-    margin 0
-    font-size 12px
-    text-align left
-    z-index 11
-    flex-shrink 2
-    a
-      color $accent
+	display flex
+	padding 24px 16px
+	justify-content space-between
+	align-items center
+	p
+		margin 0
+		font-size 12px
+		text-align left
+		z-index 11
+		flex-shrink 2
+		a
+			color $accent
 #button-agree
-  display block
-  font-size 15px
-  padding 8px 10px
-  text-align center
-  background-color #bf545e
-  border-radius 5px
-  cursor pointer
-  max-width 90px
-  z-index 11
+	display block
+	font-size 15px
+	padding 8px 10px
+	text-align center
+	background-color #bf545e
+	border-radius 5px
+	cursor pointer
+	max-width 90px
+	z-index 11
+@media (max-width:60em)
+	#cookie-banner
+		position sticky
 @media (max-width:38em)
-  .banner-inner
-    flex-direction column
-  #button-agree
-    margin-top 10px
-    width 100%
-    padding 9px
+	.banner-inner
+		flex-direction column
+	#button-agree
+		margin-top 10px
+		width 100%
+		padding 9px

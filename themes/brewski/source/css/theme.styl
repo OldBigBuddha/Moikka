@@ -2,7 +2,7 @@
 @import "_util.styl"
 
 html
-	overflow hidden
+	overflow-y scroll
 
 body
 	margin 0
@@ -26,16 +26,14 @@ body
 	z-index 1
 	overflow hidden
 	zoom 1
+	display none
 
 #container
 	background $base
 	z-index 2
-	position fixed
-	overflow scroll
-	overflow-x hidden
-	height 100vh
 	width 100%
 	transition all .8s ease
+	padding-top 120px
 	&.active
 		transform none
 
@@ -120,7 +118,7 @@ a:active
 			position absolute
 			top -42px
 			left 0
-			background $primary
+			background $accent
 			padding 10px 15px
 			color white
 			font-size 14px
@@ -186,8 +184,18 @@ a:active
 	font-size 1rem
 
 @media (max-width: 60em)
-	#container.active
-		transform translateX(-85%)
+	html
+		overflow hidden
+	#menu
+		display block
+	#container
+		position fixed
+		overflow scroll
+		overflow-x hidden
+		padding-top 0
+		height 100vh
+		&.active
+			transform translateX(-85%)
 @media (max-width: 38em)
 	.home.post-list
 		display block

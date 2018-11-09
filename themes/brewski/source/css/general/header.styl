@@ -2,6 +2,7 @@
 @import '../_util.styl'
 .main-header
 	position fixed
+	background white
 	top 0
 	margin 0
 	width 100%
@@ -28,13 +29,13 @@
 	display inline-block
 	float none
 	padding 0 .5em
-	border-right 1px solid white
+	border-right 1px solid $gray
 	&:last-child
 		border none
 .nav .link-block-styled, .nav a
 	display inline-block
 	text-decoration none
-	color white
+	color $gray
 	position relative
 	&:hover
 		color #5491E8
