@@ -29,12 +29,12 @@ mixin posts()
 					// 	.month Mar
 					img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg')
 					// post.imageに差し替える
-				.post-content
+				.card-content
 					.category 学校生活
 					h1.title
 						+postTitle(item.title)
-					h2.subtitle
-						+postInfo(item)
+					h2.sub_title
+						!= full_date(item.date, config.date_format)
 					p.description
 						!= item.excerpt
 						a.read-more(href=url_for(item.path))
@@ -43,7 +43,7 @@ mixin posts()
 						span.writer
 							i.fas.fa-pencil-alt
 							a(href="#")
-								item.writer
+								!= item.writer
 						span.tags
 							i.fas.fa-tags
 							a(href='#')
