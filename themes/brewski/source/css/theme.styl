@@ -1,5 +1,8 @@
 @import "_variables.styl"
+@import "_util.styl"
 
+html
+	overflow hidden
 
 body
 	margin 0
@@ -52,25 +55,107 @@ p
 
 a,
 a:active
-	color #5491E8
+	color $primary
 	text-decoration none
 
 .home
 	&.post-list
-		margin 2em 0
-		list-style none
-		.post-list-item
-			padding 1em .4em
-		.post-content
-			& > ul
-				list-style initial
-		.read-more
-			color #5491e8
-		.post-title
-			margin .65em 0
-			font-size 1.5em
-		.post-title-link
-			color $black
+		width 92%
+		margin 2em auto
+		display flex
+		flex-wrap wrap
+		flex-direction row
+.post-module
+	width 46%
+	margin 0 1.8% 25px
+	position relative
+	z-index 1
+	display block
+	background white
+	min-width 270px
+	height 470px
+	box-shadow 0px 1px 2px 0px rgba(0, 0, 0, 0.15)
+	transition all 0.3s linear 0s
+	&:hover 
+		box-shadow 0px 1px 35px 0px rgba(0, 0, 0, 0.3)
+		.thumbnail img 
+			-webkit-transform scale(1.1)
+			-moz-transform scale(1.1)
+			transform scale(1.1)
+			opacity .6
+	.thumbnail 
+		background $black
+		height 400px
+		overflow hidden
+		// .date 
+		// 	position absolute
+		// 	top 20px
+		// 	right 20px
+		// 	z-index 1
+		// 	background $primary
+		// 	width 55px
+		// 	height 55px
+		// 	padding 12.5px 0
+		// 	color white
+		// 	font-weight 700
+		// 	text-align center
+		// 	.day 
+		// 		font-size 18px
+		// 	.month 
+		// 		font-size 12px
+		// 		text-transform uppercase
+		img 
+			display block
+			width 120%
+			transition all 0.3s linear 0s
+	.card-content 
+		position absolute
+		bottom 0
+		background white
+		width 100%
+		padding 30px
+		box-sizing border-box
+		transition all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s
+		.category 
+			position absolute
+			top -42px
+			left 0
+			background $primary
+			padding 10px 15px
+			color white
+			font-size 14px
+			font-weight 600
+			text-transform uppercase
+		.title 
+			margin 0
+			padding 0 0 10px
+			color $gray
+			font-size 26px
+			font-weight 700
+		.sub_title 
+			margin 0
+			padding 0 0 20px
+			color $primary
+			font-size 20px
+			font-weight 400
+		.description 
+			display none
+			color $gray
+			font-size 14px
+			line-height 1.8em
+			.read-more
+				color $primary
+		.post-meta 
+			margin 30px 0 0
+			color $gray
+			opacity .6
+			font-size 15px
+			.writer 
+				margin 0 16px 0 0
+			a 
+				padding-left 5px
+				color $gray
+				text-decoration none
 
 .home.post-list .post-content h2:before,
 .home.post-list .post-content h3:before,
@@ -95,7 +180,6 @@ a:active
 	.post-info
 		width 6em
 		font-size .9em
-		color #393e46
 
 .archive .post-time,
 .archive .post-title-link

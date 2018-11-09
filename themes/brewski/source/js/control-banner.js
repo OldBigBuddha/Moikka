@@ -30,6 +30,13 @@ $(() => {
   }
 });
 
+$('.post-module').hover(function() {
+  $(this).find('.description').stop().animate({
+    height: "toggle",
+    opacity: "toggle"
+  }, 300);
+});
+
 $('#hum-menu').click(function() {
   $(this).toggleClass('active');
   if ($(this).hasClass('active')) {
