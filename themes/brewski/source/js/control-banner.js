@@ -2,7 +2,7 @@ $(() => {
   if (document.cookie.split(';').filter((item) => item.includes("privacypolicy=")).length) {}
   else {
     $("#cookie-banner")
-    .css("display", "flex")
+    .css("display", "block")
     .hide()
     .fadeIn(1500)
     .animate({
@@ -16,16 +16,7 @@ $(() => {
       let deadline = new Date();
       deadline.setTime( deadline.getTime + 30*24*60*60*1000 );
       document.cookie = "privacypolicy=agree;expires=" + deadline.toGMTString();
-
-      $("#cookie-banner")
-        .fadeOut(2000)
-        .animate({
-          "bottom": "-80",
-          "display": "none"
-        }, {
-          duration: 1000,
-          queue: false
-        });
+      $("#cookie-banner").slideUp()
     });
   }
   $(document).on({
