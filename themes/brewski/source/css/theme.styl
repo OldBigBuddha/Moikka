@@ -1,151 +1,197 @@
-@import "variables.styl"
+@import "_variables.styl"
+@import "_util.styl"
+
+html
+	overflow hidden
 
 body
-  margin 0
-  color $black
-  font-size calc(110% + 0.1vw)
-  line-height 1.6
-  background-color $base
-  font-family system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
+	margin 0
+	padding 0
+	font-family 'Roboto', sans-serif
+	box-sizing content-box
+	margin 0
+	color $black
+	font-size calc(110% + 0.1vw)
+	line-height 1.6
+	background-color $base
+	font-family system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
+	overflow hidden
+	zoom 1
 
-main#main
-  float left
-  width 66%
-aside#side-bar
-  float right
-  width 33.33%
-    
-@media (max-width: 767px)
-  main#main
-    width 100%
-    margin 0
-  #side-bar
-    width 100%
+#menu
+	background $gray
+	position fixed
+	width 100%
+	height 100vh
+	z-index 1
+	overflow hidden
+	zoom 1
 
-.wrap, .barba-container
-  width 96%
-  margin 0 auto
-  overflow hidden
-  zoom 1
-  padding-bottom 3em
+#container
+	background $base
+	z-index 2
+	position fixed
+	overflow scroll
+	overflow-x hidden
+	height 100vh
+	width 100%
+	transition all .8s ease
+	&.active
+		transform none
+
 .container
-  background white
-  padding 25px
-  min-height 30vh
+	min-height 30vh
 
 h1, h2, h3, h4, h5, h6
-  line-height 1.2
+	line-height 1.2
 
 ul
-  margin 1rem 0
+	margin 1rem 0
 
 p
-  letter-spacing -.01em
-  line-height 1.8
-  margin 1.2em 0
+	letter-spacing -.01em
+	line-height 1.8
+	margin 1.2em 0
 
 a,
 a:active
-  color #222831
-  text-decoration none
-
-::selection
-  color #fff
-  background-color #9e1900
-
-code
-  padding .2em .4em
-
-iframe,
-video
-  max-width 100%
-  margin 1rem auto
-
-table
-  th
-    font-weight 600
-    border 0
-    text-align left
-    margin 0
-    padding .4em .8em
-
-  thead
-    background-color #fff
-
-  tbody
-    tr
-      border-top 0
-      background-color #fff
-      &:nth-child(2n)
-        background-color #f6f8fa
-    td
-      border .05em solid transparent
-      text-align left
-
-table tbody th :first-child,
-table tbody td :first-child
-  margin-top 0
-
-table tbody th :last-child,
-table tbody td :last-child
-  margin-bottom 0
+	color $primary
+	text-decoration none
 
 .home
-  &.post-list
-    margin 2em 0
-    list-style none
-    .post-list-item
-      padding 1em .4em
-    .post-content
-      & > ul
-        list-style initial
-    .read-more
-      color #9e1900
+	&.post-list
+		width 92%
+		margin 2em auto
+		display flex
+		flex-wrap wrap
+		flex-direction row
+.post-module
+	width 46%
+	margin 0 1.8% 25px
+	position relative
+	z-index 1
+	display block
+	background white
+	min-width 270px
+	height 470px
+	box-shadow 0px 1px 2px 0px rgba(0, 0, 0, 0.15)
+	transition all 0.3s linear 0s
+	&:hover 
+		box-shadow 0px 1px 35px 0px rgba(0, 0, 0, 0.3)
+		.thumbnail img 
+			-webkit-transform scale(1.1)
+			-moz-transform scale(1.1)
+			transform scale(1.1)
+			opacity .6
+	.thumbnail 
+		background $black
+		height 400px
+		overflow hidden
+		// .date 
+		// 	position absolute
+		// 	top 20px
+		// 	right 20px
+		// 	z-index 1
+		// 	background $primary
+		// 	width 55px
+		// 	height 55px
+		// 	padding 12.5px 0
+		// 	color white
+		// 	font-weight 700
+		// 	text-align center
+		// 	.day 
+		// 		font-size 18px
+		// 	.month 
+		// 		font-size 12px
+		// 		text-transform uppercase
+		img 
+			display block
+			width 120%
+			transition all 0.3s linear 0s
+	.card-content 
+		position absolute
+		bottom 0
+		background white
+		width 100%
+		padding 30px
+		box-sizing border-box
+		transition all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s
+		.category 
+			position absolute
+			top -42px
+			left 0
+			background $primary
+			padding 10px 15px
+			color white
+			font-size 14px
+			font-weight 600
+			text-transform uppercase
+		.title 
+			margin 0
+			padding 0 0 10px
+			color $gray
+			font-size 26px
+			font-weight 700
+		.sub_title 
+			margin 0
+			padding 0 0 20px
+			color $primary
+			font-size 20px
+			font-weight 400
+		.description 
+			display none
+			color $gray
+			font-size 14px
+			line-height 1.8em
+			.read-more
+				color $primary
+		.post-meta 
+			margin 15px 0 0
+			color $gray
+			opacity .6
+			font-size 15px
+			.writer 
+				margin 0 16px 0 0
+			a 
+				padding-left 5px
+				color $gray
+				text-decoration none
 
 .home.post-list .post-content h2:before,
 .home.post-list .post-content h3:before,
 .home.post-list .post-content h4:before,
 .home.post-list .post-content h5:before,
 .home.post-list .post-content h6:before
-  content ""
+	content ""
 
 .archive
-  .post-item
-    display flex
-    flex-wrap wrap
-    padding-left 1.5rem
+	.post-item
+		display flex
+		flex-wrap wflexrap
+		padding-left 1.5rem
 
-  .post-title-link
-    color #9e1900
-    padding-left 1em
-    &:hover
-      border-bottom 0
-      color #801501
+	.post-title-link
+		color #9e1900
+		padding-left 1em
+		&:hover
+			border-bottom 0
+			color #801501
 
-  .post-info
-    width 6em
-    font-size .9em
-    color #393e46
+	.post-info
+		width 6em
+		font-size .9em
 
 .archive .post-time,
 .archive .post-title-link
-  font-size 1rem
+	font-size 1rem
 
-.post // ここいる？
-  padding-top
-    .1em
-      .post-block
-        .post-title
-          margin .65em 0
-          font-size 1.5em
-
-#mask
-  position fixed
-  overflow scroll
-  width 100%
-  height 100%
-  padding 1em 0
-  background-color rgba(0, 0, 0, .5)
-  z-index 10
-  #mask-image
-    max-width 95%
+@media (max-width: 60em)
+	#container.active
+		transform translateX(-85%)
+@media (max-width: 38em)
+	.home.post-list
+		display block
+	.post-module
+		width 100%
+		margin 25px 0
+		height 400px
