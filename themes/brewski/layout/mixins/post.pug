@@ -22,19 +22,31 @@ mixin postWriter(writer)
 mixin posts()
 	.home.post-list
 		- page.posts.each(function (item) {
-			.post-card
-				.card-eyecatch
-					img(src="/img/eyecatch-example.jpg",alt="アイキャッチ画像")
+			.post-module
+				.thumbnail
+					// .date
+					// 	.day 27
+					// 	.month Mar
+					img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg')
 					// post.imageに差し替える
-				.card-description
-					.card-info
-						h2.card-title
-							+postTitle(item.title)
+				.post-content
+					.category 学校生活
+					h1.title
+						+postTitle(item.title)
+					h2.subtitle
 						+postInfo(item)
-					.card-content
+					p.description
 						!= item.excerpt
-					a.read-more(href=url_for(item.path))
-						!= __('read_more')
+						a.read-more(href=url_for(item.path))
+							!= __('read_more')
+					.post-meta
+						span.writer
+							i.fas.fa-pencil-alt
+							a(href="#")
+								item.writer
+						span.tags
+							i.fas.fa-tags
+							a(href='#')
 		- })
 
 //- Archive Page
