@@ -102,3 +102,36 @@
 	.next:hover
 		box-shadow 0 .2em #801501
 		top .1em
+
+.prev-next-link a
+	border-bottom 1px #ddd solid
+	display block
+	text-decoration none
+	padding 14px 40px
+	margin 2em 3em
+	color #0bd
+	&:hover
+		background-color #f6f6f6
+	&:first-child
+		border-top 1px #ddd solid
+.prev-next-label
+	font-size .825rem
+	color #000
+	margin-bottom 10px
+.prev-link
+	background url(http://www.webcreatorbox.com/sample/images/arrow-prev.svg) no-repeat 10px center
+.next-link
+	background url(http://www.webcreatorbox.com/sample/images/arrow-next.svg) no-repeat right 10px center
+.prev-link,
+.next-link
+	background-size 16px 28px
+@media ( min-width 600px)
+	.prev-next-link
+		display flex
+	.prev-next-link a
+		flex 1
+	.prev-next-link a,
+	.prev-next-link a:first-child
+		border none
+	.next-link
+		text-align right

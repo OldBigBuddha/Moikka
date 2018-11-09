@@ -1,4 +1,15 @@
 mixin home()
+	- var prev = page.prev_link
+	- var next = page.next_link
+	.paginator
+		if page.prev
+			a.prev(href=url_for(prev))
+				!= __('prev')
+		if page.next
+			a.next(href=url_for(next))
+				!= __('next')
+
+mixin post()
 	- var prev = page.prev ? page.prev.path : false;
 	- var next = page.next ? page.next.path : false;
 	- var prevTitle = page.prev ? page.prev.title : false;
@@ -7,24 +18,10 @@ mixin home()
 		if prev
 			a.prev-link(href=url_for(prev))
 				p.prev-next-label 前の記事
-				.thumb-wrap
-					img(src="img/noimage.jpg", alt="")
-					p
-						!= prevTitle	
+				p
+					!= prevTitle	
 		if next	
 			a.next-link(href=url_for(next))
 				p.prev-next-label 次の記事
-				.thumb-wrap
-					img(src="img/noimage.jpg",alt="")
-					p
-						!= nextTitle
-mixin post()
-  - var prev = page.prev ? page.prev.path : false;
-  - var next = page.next ? page.next.path : false;
-  .paginator
-    if prev
-      a.prev(href=url_for(prev))
-        != __('prev_post')
-    if next
-        a.next(href=url_for(next))
-        != __('next_post')
+				p
+					!= nextTitle
