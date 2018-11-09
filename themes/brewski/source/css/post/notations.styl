@@ -1,31 +1,41 @@
 @import "../_variables.styl"
 
 .post-content
-
+  blockquote
+  	display block
+  	margin-block-start 1em
+  	margin-block-end 1em
+  	margin-inline-start 40px
+  	margin-inline-end 40px
+  li
+  	display list-item
+  	text-align -webkit-match-parent
+  ul, menu, dir, ol
+  	display block
+  	margin-block-start 1em
+  	margin-block-end 1em
+  	margin-inline-start 0px
+  	margin-inline-end 0px
+  	padding-inline-start 40px
   // 見出し
   h1, h2, h3, h4, h5, h6
     margin-top 1em
-    margin-bottom 1em
-
+    margin-bottom 1.5em
   h1
     position relative
-    background #dfefff
-    box-shadow 0px 0px 0px 5px #dfefff
-    border dashed 2px white
-    padding 0.2em 0.5em
-    color #454545
-    &:after
-      position absolute
-      content ''
-      left -7px
-      top -7px
-      border-width 0 0 15px 15px
-      border-style solid
-      border-color #fff #fff #a8d4ff
-      box-shadow 1px 1px 1px rgba(0, 0, 0, 0.15)
-
+    padding 0.5em
+    background $subGreen
+    color white
+    &:before
+      position: absolute;
+      content: '';
+      top: 100%;
+      left: 0;
+      border: none;
+      border-bottom: solid 15px transparent;
+      border-right: solid 20px rgb(149, 158, 155);
   h2
-    border-bottom dashed 2px #c6e3ff
+    border-bottom dashed 2px $subGreen
     padding-left 4px
     font-size: 1em
 
@@ -39,7 +49,7 @@
       font-weight 900
       content '\f152'
       margin 0 5px 0 -15px
-      color #a8d4ff
+      color $subGreen
 
   // 引用
   blockquote
@@ -47,53 +57,40 @@
     padding 7px 16px
     box-sizing border-box
     font-style italic
-    color #464646
-    background-color #f0f7ff
+    color $gray
+    background-color #e5e5e5
+    border-radius 10px
+    &:before, &:after
+      display inline-block
+      position absolute
+      width 40px
+      height 40px
+      line-height 40px
+      border-radius 50%
+      vertical-align middle
+      text-align center
+      font-family "Font Awesome 5 Free"
+      font-weight 900
+      background $subGreen
+      color #FFF
+      font-size 22px
     &:before
-        display inline-block
-        position absolute
-        top -20px
-        left -20px
-        width 40px
-        height 40px
-        line-height 40px
-        border-radius 50%
-        vertical-align middle
-        text-align center
-        content "\f10d"
-        font-family "Font Awesome 5 Free"
-        font-weight 900
-        background #72ccf4
-        color #FFF
-        font-size 22px
-        font-weight 900
+      content "\f10d"
+      top -10px
+      left -10px
     &:after
-        display inline-block
-        position absolute
-        bottom -20px
-        right -20px
-        width 40px
-        height 40px
-        line-height 40px
-        border-radius 50%
-        vertical-align middle
-        text-align center
-        content "\f10e"
-        font-family "Font Awesome 5 Free"
-        font-weight 900
-        background #72ccf4
-        color #FFF
-        font-size 22px
-        font-weight 900
+      bottom -10px
+      right -10px
+      content "\f10e"
     p
-        padding 0
-        margin 10px 0
-        line-height 1.7
+      padding 0
+      margin 10px 0
+      line-height 1.7
     cite
-        display block
-        text-align right
-        color #888888
-        font-size 0.9em
+      display block
+      text-align right
+      color #888888
+      font-size 0.9em
 
   // 強調・イタリック体
 
