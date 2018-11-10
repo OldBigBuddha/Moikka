@@ -7,10 +7,6 @@
 	margin 0 5em
 	padding 3em
 	margin-top 1.5em
-@media (max-width: 38em)
-	.post-footer
-		margin 1em
-		padding 1em
 .post-writer
 	padding 15px 17px 17px
 	position relative
@@ -87,7 +83,6 @@
 	margin 2em 0
 	display flex
 	justify-content space-around
-
 	.prev,
 	.next
 		position relative
@@ -98,41 +93,56 @@
 		color white
 		background-color #9e1900
 		font-weight 600
-
 	.prev:hover,
 	.next:hover
 		box-shadow 0 .2em #801501
 		top .1em
 
-.prev-next-link a
-	border-bottom 1px #ddd solid
-	display block
-	text-decoration none
-	padding 14px 40px
-	margin 2em 3em
-	color #0bd
-	&:hover
-		background-color #f6f6f6
-	&:first-child
-		border-top 1px #ddd solid
+.prev-next-link
+	margin 0
+	a
+		border-bottom 1px #ddd solid
+		display block
+		text-decoration none
+		padding 14px 40px
+		margin 0
+		color $primary
+		&:hover
+			background-color #f6f6f6
+		&:first-child
+			border-top 1px #ddd solid
+	p:last-child
+		font-size 1.3em
+		margin 0
+		margin-bottom 1em
 .prev-next-label
 	font-size .825rem
 	color #000
 	margin-bottom 10px
 .prev-link
-	background url(http://www.webcreatorbox.com/sample/images/arrow-prev.svg) no-repeat 10px center
+	background url('../../img/arrow-prev.svg') no-repeat 10px center
+	text-align left
+	&:hover
+		background-position top 50% left 0
 .next-link
-	background url(http://www.webcreatorbox.com/sample/images/arrow-next.svg) no-repeat right 10px center
+	background url('../../img/arrow-next.svg') no-repeat right 10px center
+	text-align right
+	&:hover
+		background-position top 50% right 0
 .prev-link,
 .next-link
 	background-size 16px 28px
+	transition .35s ease all
+@media (max-width: 38em)
+	.post-footer
+		margin 1em
+		padding 1em
 @media ( min-width 600px)
 	.prev-next-link
 		display flex
+		margin 0 5em
 	.prev-next-link a
 		flex 1
 	.prev-next-link a,
 	.prev-next-link a:first-child
 		border none
-	.next-link
-		text-align right
